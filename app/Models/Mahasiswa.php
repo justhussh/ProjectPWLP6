@@ -26,4 +26,8 @@ class Mahasiswa extends Model
         'Email',
         'No_Handphone',
      ];
+
+     public function kelas(){
+      return $this->belongsTo(Kelas::class);
+     }
 };
