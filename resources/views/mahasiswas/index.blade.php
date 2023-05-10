@@ -35,11 +35,11 @@
 
             <tr>
                 <th>Nim</th>
-                <th style="width:15%">Nama</th>
+                <th>Nama</th>
                 <th>Foto</th>
-                <th style="width:15%">TTL</th>
+                <th>TTL</th>
                 <th>Kelas</th>
-                <th style="width:20%">Jurusan</th>
+                <th>Jurusan</th>
                 <th>No_Handphone</th>
                 <th>Email</th>
                 <th style="width:40%">Action</th>
