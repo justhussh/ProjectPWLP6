@@ -21,7 +21,7 @@
                             </ul>
                         </div>
                     @endif
-                    <form method="post" action="{{ route('mahasiswas.update', $Mahasiswa->Nim) }}" id="myForm">
+                    <form method="post" action="{{ route('mahasiswas.update', $Mahasiswa->Nim) }}" id="myForm" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
                         <div class="form-group">
@@ -35,13 +35,18 @@
                                 value="{{ $Mahasiswa->Nama }}" aria-describedby="Nama">
                         </div>
                         <div class="form-group">
+                            <label for="image">Foto</label>
+                            <input type="file" class="form-control" required="required" name="image" value="{{ $Mahasiswa->featured_image }}"></br>
+                            <img width="100px" src="{{asset('storage/' . $Mahasiswa->featured_image) }}">
+                        </div>
+                        <div class="form-group">
                             <label for="Tanggal_Lahir">Tanggal_Lahir</label>
                             <input type="text" name="Tanggal_Lahir" class="form-control" id="Tanggal_Lahir"
                                 value="{{ $Mahasiswa->Tanggal_Lahir}}" aria-describedby="Tanggal_Lahir">
                         </div>
                         <div class="form-group">
-                            <label for="kelas">Kelas</label>
-                            <select name="kelas" class="form-control">
+                            <label for="Kelas">Kelas</label>
+                            <select name="Kelas" class="form-control">
                                 @foreach ($kelas as $Kelas)
                                 <option value="{{$Kelas->id}}">{{$Kelas->nama_kelas}}</option>
                                 @endforeach

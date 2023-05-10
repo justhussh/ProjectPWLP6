@@ -1,7 +1,7 @@
 <?php
 
 
-use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\MahasiswasController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -21,9 +21,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+// Auth::routes();
 
-Route::resource('mahasiswas', MahasiswaController::class);
+Route::resource('mahasiswas', MahasiswasController::class);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/search', [MahasiswaController::class, 'search'])->name('search');
-Route::get('/khs/{Nim}', [MahasiswaController::class, 'khs'])->name('khs');
+Route::get('/search', [MahasiswasController::class, 'search'])->name('search');
+Route::get('/khs/{Nim}', [MahasiswasController::class, 'khs'])->name('khs');
+Route::get('/khs/{mahasiswa_id}/print_pdf', [MahasiswasController::class, 'print_pdf'])->name('print_pdf');

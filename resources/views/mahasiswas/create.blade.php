@@ -19,25 +19,30 @@
                             </ul>
                         </div>
                     @endif
-                    <form method="post" action="{{ route('mahasiswas.store') }}" id="myForm">
+                    <form method="post" action="{{ route('mahasiswas.store') }}" id="myForm" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
                             <label for="Nim">Nim</label>
-                            <input type="text" name="Nim" class="form-control" id="Nim" aria-describedby="Nim">
+                            <input type="text" name="Nim" class="form-control" id="Nim" 
+                            aria-describedby="Nim">
                         </div>
                         <div class="form-group">
                             <label for="Nama">Nama</label>
                             <input type="Nama" name="Nama" class="form-control" id="Nama"
                                 aria-describedby="Nama">
                         </div>
-                        <div class="form-group">
-                            <label for="Tanggal_Lahir">Tanggal Lahir</label>
-                            <input type="Tanggal_Lahir" name="Tanggal_Lahir" class="form-control" id="Tanggal_Lahir"
-                                aria-describedby="Tanggal_Lahir">
+                        <div class="from-group">
+                            <label for="image">Foto: </label>
+                            <input type="file" class="form-control" name="image" required="required">
                         </div>
                         <div class="form-group">
-                            <label for="kelas">Kelas</label>
-                            <select name="kelas" class="form-control">
+                            <label for="Tanggal_Lahir">Tanggal Lahir</label>
+                            <input type="Tanggal_Lahir" name="Tanggal_Lahir" class="form-control" id="Tanggal_Lahir" 
+                            aria-describedby="Tanggal_Lahir">
+                        </div>
+                        <div class="form-group">
+                            <label for="Kelas">Kelas</label>
+                            <select name="Kelas" class="form-control">
                                 @foreach ($kelas as $Kelas)
                                 <option value="{{$Kelas->id}}">{{$Kelas->nama_kelas}}</option>
                                 @endforeach

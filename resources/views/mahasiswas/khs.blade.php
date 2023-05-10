@@ -32,7 +32,9 @@
                         @endforeach
                         </tr>
                     </table>
-                </div><a class="btn btn-success mt-3" href="{{ route('mahasiswas.index') }}">Kembali</a>
+                </div>
+                <a class="btn btn-secondary mt-3" href="{{ route('mahasiswas.index') }}">Kembali</a>
+                <a class="btn btn-success mt-3" href="{{ route('print_pdf', $Mahasiswa->Nim) }}">Cetak ke PDF</a>
             </div>
         </div>
     </div>

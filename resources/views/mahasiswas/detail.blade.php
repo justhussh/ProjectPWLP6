@@ -7,6 +7,7 @@
                 <div class="card-header">
                     Detail Mahasiswa
                 </div>
+                <center><img width="200px" src="{{asset('storage/' . $Mahasiswa->featured_image) }}"></center>
                 <div class="card-body">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item"><b>Nim: </b>{{ $Mahasiswa->Nim }}</li>
@@ -16,7 +17,6 @@
                         <li class="list-group-item"><b>Jurusan: </b>{{ $Mahasiswa->Jurusan }}</li>
                         <li class="list-group-item"><b>No_Handphone: </b>{{ $Mahasiswa->No_Handphone }}</li>
                         <li class="list-group-item"><b>Email: </b>{{ $Mahasiswa->Email }}</li>
-                        <li class="list-group-item"><b>Nilai: </b>{{ $Mahasiswa->nilai }}</li>
                     </ul>
                 </div><a class="btn btn-success mt-3" href="{{ route('mahasiswas.index') }}">Kembali</a>
             </div>

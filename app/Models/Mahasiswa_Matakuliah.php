@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class Mahasiswa_Matakuliah extends Model
 {
     use HasFactory;
-    protected $table = "mahasiswas_matakuliah"; // Eloquent akan membuat model mahasisw menyimpan record di tabel mahasiswas
+    protected $table = "mahasiswa_matakuliah"; // Eloquent akan membuat model mahasisw menyimpan record di tabel mahasiswas
     public $timestamps = false;
     protected $primaryKey = 'id'; // Memanggil isi DB Dengan primarykey
     /**
@@ -24,14 +24,6 @@ class Mahasiswa_Matakuliah extends Model
         'nilai',
     ];
 
-    // public function mahasiswas()
-    // {
-    //     return $this->belongsToMany(Mahasiswa::class);
-    // }
-    // public function matakuliah()
-    // {
-    //     return $this->belongsToMany(MataKuliah::class);
-    // }
     public function matakuliah()
     {
         return $this->belongsTo(Matakuliah::class);
